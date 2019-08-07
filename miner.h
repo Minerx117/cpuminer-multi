@@ -199,7 +199,6 @@ void sha256_transform_8way(uint32_t *state, const uint32_t *block, int swap);
 struct work;
 
 int scanhash_allium(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
-int scanhash_arctichash(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
 int scanhash_axiom(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
 int scanhash_bastion(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
 int scanhash_blake(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
@@ -502,7 +501,6 @@ void print_hash_tests(void);
 
 void sha256d(unsigned char *hash, const unsigned char *data, int len);
 void allium_hash(void *state, const void *input);
-void arctichash_hash(void *output, const void *input);
 void axiomhash(void *state, const void *input);
 void bastionhash(void *output, const void *input);
 void blakehash(void *state, const void *input);

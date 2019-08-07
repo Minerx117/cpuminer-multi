@@ -183,9 +183,6 @@
     <ClCompile Include="algo\allium.c">
       <Filter>algo</Filter>
     </ClCompile>
-    <ClCompile Include="algo\arctichash.c">
-      <Filter>algo</Filter>
-    </ClCompile>
     <ClCompile Include="algo\bastion.c">
       <Filter>algo</Filter>
     </ClCompile>
