@@ -1,7 +1,7 @@
 CPUMiner-Multi
 ==============
 
-[![Build Status](https://travis-ci.org/tpruvot/cpuminer-multi.svg)](https://travis-ci.org/tpruvot/cpuminer-multi)
+[![Build Status](https://travis-ci.org/Kudaraidee/cpuminer-multi.svg)](https://travis-ci.org/Kudaraidee/cpuminer-multi)
 
 This is a multi-threaded CPU miner,
 fork of [pooler](//github.com/pooler)'s cpuminer (see AUTHORS for list of contributors).
