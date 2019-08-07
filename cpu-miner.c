@@ -83,6 +83,7 @@ enum algos {
 	ALGO_NEOSCRYPT,   /* NeoScrypt(128, 2, 1) with Salsa20/20 and ChaCha20/20 */
 	ALGO_QUARK,       /* Quark */
 	ALGO_ALLIUM,      /* Garlicoin double lyra2 */
+	ALGO_ARCTICHASH,  /* ArcticHash (Globaltoken) */
 	ALGO_AXIOM,       /* Shabal 256 Memohash */
 	ALGO_BASTION,
 	ALGO_BLAKE,       /* Blake 256 */
@@ -151,6 +152,7 @@ static const char *algo_names[] = {
 	"neoscrypt",
 	"quark",
 	"allium",
+	"arctichash",
 	"axiom",
 	"bastion",
 	"blake",
@@ -314,6 +316,7 @@ Usage: " PACKAGE_NAME " [OPTIONS]\n\
 Options:\n\
   -a, --algo=ALGO       specify the algorithm to use\n\
                           allium       Garlicoin double lyra2\n\
+						  arctichash   ArcticHash (Globaltoken)\n\
                           axiom        Shabal-256 MemoHash\n\
                           bitcore      Timetravel with 10 algos\n\
                           blake        Blake-256 14-rounds (SFR)\n\
@@ -2448,6 +2451,8 @@ static void *miner_thread(void *userdata)
 		case ALGO_ZR5:
 			rc = scanhash_zr5(thr_id, &work, max_nonce, &hashes_done);
 			break;
+		case ALGO_ARCTICHASH:
+			rc = scanhash_arctichash(thr_id, &work, max_nonce, &hashes_done);
 		default:
 			/* should never happen */
 			goto out;

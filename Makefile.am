@@ -57,6 +57,7 @@ cpuminer_SOURCES = \
   yescrypt/yescrypt-common.c yescrypt/yescrypt-best.c \
   yescrypt/sha256_Y.c \
   algo/allium.c \
+  algo/arctichash.c \
   algo/axiom.c \
   algo/bastion.c \
   algo/blake.c \
@@ -139,13 +140,12 @@ if HAVE_WINDOWS
 endif
 
 cpuminer_LDFLAGS	= @LDFLAGS@
-cpuminer_LDADD	= @LIBCURL@ @JANSSON_LIBS@ @PTHREAD_LIBS@ @WS2_LIBS@
+cpuminer_LDADD	= @LIBCURL@ @JANSSON_LIBS@ @PTHREAD_LIBS@ @WS2_LIBS@ -lssl -lcrypto -lgmp
 cpuminer_CPPFLAGS = @LIBCURL_CPPFLAGS@ $(ALL_INCLUDES)
 cpuminer_CFLAGS   = -Wno-pointer-sign -Wno-pointer-to-int-cast $(disable_flags)
 
 if HAVE_WINDOWS
 cpuminer_CFLAGS += -Wl,--stack,10485760
-cpuminer_LDADD += -lcrypt32 -lgdi32 -lgcc -lgcc_eh
 endif
 
 if HAVE_WINDOWS

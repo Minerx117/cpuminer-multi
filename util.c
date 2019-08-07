@@ -2329,6 +2329,9 @@ void print_hash_tests(void)
 	allium_hash(&hash[0], &buf[0]);
 	printpfx("allium", hash);
 
+	arctichash_hash(&hash[0], &buf[0]);
+	printpfx("arctichash", hash);
+
 	axiomhash(&hash[0], &buf[0]);
 	printpfx("axiom", hash);
 
