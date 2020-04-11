@@ -1856,6 +1856,7 @@ static void stratum_gen_work(struct stratum_ctx *sctx, struct work *work)
 				work_set_target(work, sctx->job.diff / (65536.0 * opt_diff_factor));
 				break;
 			case ALGO_ALLIUM:
+			case ALGO_ARCTICHASH:
 			case ALGO_FRESH:
 			case ALGO_DMD_GR:
 			case ALGO_GROESTL:
